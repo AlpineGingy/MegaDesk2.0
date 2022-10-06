@@ -43,7 +43,7 @@
             this.numDeskDrawers = new System.Windows.Forms.NumericUpDown();
             this.selectDelivery = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCustomerName = new System.Windows.Forms.TextBox();
             this.lblDate = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numDeskDepth)).BeginInit();
@@ -71,6 +71,7 @@
             this.btnSave.TabIndex = 1;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // selectSurfaceMat
             // 
@@ -197,13 +198,13 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Customer Name";
             // 
-            // textBox1
+            // txtCustomerName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(236, 97);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(320, 26);
-            this.textBox1.TabIndex = 15;
+            this.txtCustomerName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCustomerName.Location = new System.Drawing.Point(236, 97);
+            this.txtCustomerName.Name = "txtCustomerName";
+            this.txtCustomerName.Size = new System.Drawing.Size(320, 26);
+            this.txtCustomerName.TabIndex = 15;
             // 
             // lblDate
             // 
@@ -220,7 +221,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblDate);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCustomerName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.selectDelivery);
             this.Controls.Add(this.numDeskDrawers);
@@ -262,7 +263,7 @@
         private System.Windows.Forms.NumericUpDown numDeskDrawers;
         private System.Windows.Forms.ComboBox selectDelivery;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCustomerName;
         private System.Windows.Forms.Label lblDate;
     }
 }

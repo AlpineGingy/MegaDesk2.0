@@ -10,11 +10,11 @@ namespace MegaDesk
     // enums
     public enum DesktopMaterial
     {
-        Laminate,
         Oak,
+        Laminate,
+        Pine,
         Rosewoord,
         Veneer,
-        Pine
     }
 
     internal class Desk
@@ -26,9 +26,9 @@ namespace MegaDesk
         public const short MAX_DEPTH = 48;
         public const short MIN_DESK_DRAWERS = 0;
         public const short MAX_DESK_DRAWERS = 7;
-        public float Width { get; set; }
+        public int Width { get; set; }
 
-        public float Depth { get; set; }
+        public int Depth { get; set; }
 
         public int NumberOfDrawers { get; set; }
 

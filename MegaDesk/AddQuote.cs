@@ -47,5 +47,28 @@ namespace MegaDesk
         {
             this.Close();
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            var desk = new Desk();
+            var deskQuote = new DeskQuote();
+
+            desk.Depth = (int)numDeskDepth.Value;
+            desk.Width = (int)numDeskWidth.Value;
+            desk.NumberOfDrawers = (int)numDeskDrawers.Value;
+            desk.DesktopMaterial = (DesktopMaterial)selectSurfaceMat.SelectedValue;
+
+            deskQuote.CustomerName = txtCustomerName.Text;
+            deskQuote.QuoteDate = DateTime.Now;
+            deskQuote.RushOrder = (int)selectDelivery.SelectedValue;
+            deskQuote.Desk = desk;
+
+            deskQuote.QuotePrice = deskQuote.GetQuotePrice(desk);
+
+            //write quotes to quotes.json
+
+            //show DisplayQuote form
+
+        }
     }
 }
