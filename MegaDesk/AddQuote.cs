@@ -67,7 +67,7 @@ namespace MegaDesk
             deskQuote.Desk = desk;
             deskQuote.QuotePrice = deskQuote.GetQuotePrice(desk);
 
-            //write quotes to quotes.json
+            // write quotes to quotes.json
             // If quote exists, write to it
             // Else load into new one and add to it
             // Load into list object of job DiskQuote
