@@ -50,24 +50,30 @@ namespace MegaDesk
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            // Create a Desk object and a DeskQuote object
             var desk = new Desk();
             var deskQuote = new DeskQuote();
 
+            // Fill in data for desk object
             desk.Depth = (int)numDeskDepth.Value;
             desk.Width = (int)numDeskWidth.Value;
             desk.NumberOfDrawers = (int)numDeskDrawers.Value;
             desk.DesktopMaterial = (DesktopMaterial)selectSurfaceMat.SelectedValue;
 
+            // Fill in data for deskQuote object
             deskQuote.CustomerName = txtCustomerName.Text;
             deskQuote.QuoteDate = DateTime.Now;
             deskQuote.RushOrder = (int)selectDelivery.SelectedValue;
             deskQuote.Desk = desk;
-
             deskQuote.QuotePrice = deskQuote.GetQuotePrice(desk);
 
             //write quotes to quotes.json
+            // If quote exists, write to it
+            // Else load into new one and add to it
+            // Load into list object of job DiskQuote
 
             //show DisplayQuote form
+
 
         }
     }

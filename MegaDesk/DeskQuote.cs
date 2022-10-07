@@ -1,13 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MegaDesk
 {
+    // enums
+    public enum RushOrder
+    {
+        [Description("Rush 3 Days")]
+        Rush3Days,
+        [Description("Rush 5 Days")]
+        Rush5Days,
+        [Description("Rush 7 Days")]
+        Rush7Days,
+        [Description("No Rush")]
+        Normal14Days
+    }
+
     internal class DeskQuote
     {
+        // private variables
+        private int[,] _rushOrderPrice;
+
         // constants
         public const decimal BASE_PRICE = 200;
 
