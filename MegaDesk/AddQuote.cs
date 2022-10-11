@@ -34,6 +34,7 @@ namespace MegaDesk
 
             // Fill the ComboBox with Enum DesktopMaterial
             this.selectSurfaceMat.DataSource = Enum.GetValues(typeof(DesktopMaterial));
+            this.selectDelivery.DataSource = Enum.GetNames(typeof(RushOrder));
         }
 
         private void AddQuote_FormClosed(object sender, FormClosedEventArgs e)
@@ -72,7 +73,7 @@ namespace MegaDesk
             // Else load into new one and add to it
             // Load into list object of job DiskQuote
 
-            //show DisplayQuote form
+            // show DisplayQuote form
 
 
         }

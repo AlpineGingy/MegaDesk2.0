@@ -178,11 +178,6 @@
             // selectDelivery
             // 
             this.selectDelivery.FormattingEnabled = true;
-            this.selectDelivery.Items.AddRange(new object[] {
-            "3 Days",
-            "5 Days",
-            "7 Days",
-            "Normal (14 Days)"});
             this.selectDelivery.Location = new System.Drawing.Point(553, 262);
             this.selectDelivery.Name = "selectDelivery";
             this.selectDelivery.Size = new System.Drawing.Size(171, 24);
