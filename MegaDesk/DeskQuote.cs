@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace MegaDesk
 {
@@ -56,7 +57,37 @@ namespace MegaDesk
             else if (desk.DesktopMaterial == DesktopMaterial.Veneer)
                 cost += 125;
 
+
+
             return cost;
+
+        }
+
+        private void getRushOrderPrices()
+        {
+            _rushOrderPrice = new int[3, 3];
+
+            var pricesFile = @"rushOrderPrices.txt";
+
+            string[] prices = File.ReadAllLines(pricesFile);
+            int i = 0, j = 0;
+
+            foreach (string s in prices)
+            {
+                _rushOrderPrice[i, j] = int.Parse(s);
+
+                if (j == 2)
+                {
+                    i++;
+                    j = 0;
+                }
+                else
+                {
+                    j++;
+                }
+            }
+
+
 
         }
 
