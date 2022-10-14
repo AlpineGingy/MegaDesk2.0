@@ -39,7 +39,7 @@ namespace MegaDesk
             this.selectSurfaceMat.DataSource = Enum.GetValues(typeof(DesktopMaterial));
             //List<string> shippingDescriptions = new List<string>();
             //foreach (DeliveryNotificationOptions delivery in shipping)
-            this.selectDelivery.DataSource = Enum.GetNames(typeof(RushOrder));
+            this.selectDelivery.DataSource = Enum.GetValues(typeof(RushOrderEnum));
 
             // Set default to empty
             selectSurfaceMat.SelectedIndex = -1;
@@ -79,7 +79,7 @@ namespace MegaDesk
                 // Fill in data for deskQuote object
                 CustomerName = txtCustomerName.Text,
                 QuoteDate = DateTime.Now,
-                RushOrder = 3,//selectDelivery.SelectedValue,
+                RushOrder = (RushOrderEnum)selectDelivery.SelectedValue,
                 Desk = desk,
             };
 
@@ -90,7 +90,11 @@ namespace MegaDesk
 
 
             // show DisplayQuote form
+            Form displayQuote = new DisplayQuote(deskQuote, this);
+            displayQuote.Show();
 
+            // close addquote form
+            this.Hide();
 
         }
 

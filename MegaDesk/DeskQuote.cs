@@ -9,7 +9,7 @@ using System.IO;
 namespace MegaDesk
 {
     // enums
-    public enum RushOrder
+    public enum RushOrderEnum
     {
         [Description("Rush 3 Days")]
         Rush3Days,
@@ -33,7 +33,7 @@ namespace MegaDesk
         public string CustomerName { get; set; }
         public decimal QuotePrice { get; set; }
         public DateTime QuoteDate { get; set; }
-        public int RushOrder { get; set; }
+        public RushOrderEnum RushOrder { get; set; }
         public Desk Desk { get; set; }
 
 
@@ -56,8 +56,36 @@ namespace MegaDesk
                 cost += 300;
             else if (desk.DesktopMaterial == DesktopMaterial.Veneer)
                 cost += 125;
+            // set rush order prices with the method
+            getRushOrderPrices();
 
-
+            if (RushOrder == RushOrderEnum.Rush3Days)
+            {
+                if (surfaceArea < 1000)
+                    cost = cost + (decimal)_rushOrderPrice[0, 0];
+                else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                    cost = cost + (decimal)_rushOrderPrice[0, 1];
+                else
+                    cost = cost + (decimal)_rushOrderPrice[0, 2];
+            }
+            else if (RushOrder == RushOrderEnum.Rush5Days)
+            {
+                if (surfaceArea < 1000)
+                    cost = cost + (decimal)_rushOrderPrice[0, 0];
+                else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                    cost = cost + (decimal)_rushOrderPrice[0, 1];
+                else
+                    cost = cost + (decimal)_rushOrderPrice[0, 2];
+            }
+            else if (RushOrder == RushOrderEnum.Rush7Days)
+            {
+                if (surfaceArea < 1000)
+                    cost = cost + (decimal)_rushOrderPrice[0, 0];
+                else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                    cost = cost + (decimal)_rushOrderPrice[0, 1];
+                else
+                    cost = cost + (decimal)_rushOrderPrice[0, 2];
+            }
 
             return cost;
 
@@ -86,9 +114,6 @@ namespace MegaDesk
                     j++;
                 }
             }
-
-
-
         }
 
     }
