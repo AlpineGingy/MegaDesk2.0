@@ -41,6 +41,7 @@
             this.selectSurfaceMat.Name = "selectSurfaceMat";
             this.selectSurfaceMat.Size = new System.Drawing.Size(121, 24);
             this.selectSurfaceMat.TabIndex = 0;
+            this.selectSurfaceMat.SelectedIndexChanged += new System.EventHandler(this.selectSurfaceMat_SelectedIndexChanged);
             // 
             // label1
             // 

@@ -35,19 +35,6 @@ namespace MegaDesk
             //mainMenu.Show();
             _mainMenu.Show();
         }
-        private void comSurfaceMaterial_SelectIndexChanged(object sender, EventArgs e)
-        {
-            ComboBox combo = (ComboBox)sender;
-
-            if (combo.SelectedIndex < 0)
-            {
-                loadGrid();
-            }
-            else
-            {
-                loadGrid((DesktopMaterial)combo.SelectedValue);
-            }
-        }
         private void loadGrid()
         {
             var quotesFile = @"quotes.json";
@@ -95,6 +82,20 @@ namespace MegaDesk
                     .ToList();
                 }
             
+        }
+
+        private void selectSurfaceMat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ComboBox combo = (ComboBox)sender;
+
+            if (combo.SelectedIndex < 0)
+            {
+                loadGrid();
+            }
+            else
+            {
+                loadGrid((DesktopMaterial)combo.SelectedValue);
+            }
         }
     }
 }
